@@ -28,7 +28,8 @@ class TestPage:
         '''
         return self.driver.find_element(*TestPageLocator.INPUT_FIELD_1)
 
-    def get_price_product_1(self):
+    @property
+    def price_product_1(self):
         '''
         Returns price product #1
         :return:
