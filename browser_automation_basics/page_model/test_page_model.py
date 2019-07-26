@@ -22,5 +22,16 @@ class TestPage:
         return self.driver.title
 
     def get_input_field_1(self):
+        '''
+        Returns input field #1
+        :return:
+        '''
         return self.driver.find_element(*TestPageLocator.INPUT_FIELD_1)
+
+    def get_price_product_1(self):
+        '''
+        Returns price product #1
+        :return:
+        '''
+        return self.driver.find_element(*TestPageLocator.PRICE_PRODUCT_1)
 
