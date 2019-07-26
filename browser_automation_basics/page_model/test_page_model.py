@@ -21,6 +21,6 @@ class TestPage:
         '''
         return self.driver.title
 
-    def input_field_1(self):
+    def get_input_field_1(self):
         return self.driver.find_element(*TestPageLocator.INPUT_FIELD_1)
 
