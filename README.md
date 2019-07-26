@@ -9,6 +9,10 @@ Master the fundamentals of browser automation using the Python language with Sel
 - Page Objects and Element Objects implemented sensibly and effectively<br/>
 - Industry-ready test structure and composition<br/>
 
+### Content:<br/>
+
+1. [Browser Automation Basics](https://github.com/ikostan/ElegantBrowserAutomationWithPythonAndSelenium/tree/master/browser_automation_basics)
+
 ### Dev Environment:<br/>
 - OS: Win 10 64 bit<br/>
 - Python 3.7.4<br/>
