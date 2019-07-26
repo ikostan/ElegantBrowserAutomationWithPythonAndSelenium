@@ -12,16 +12,20 @@ def first_automation():
     page = TestPage(driver)
     page.driver.get(TestPageLocator.URL)
 
-    unittest.TestCase().assertNotEqual(page.url, wrong_url)
-    unittest.TestCase().assertEqual(page.url, TestPageLocator.URL)
-    unittest.TestCase().assertEqual(page.title, TestPageLocator.TITLE)
+    unittest.TestCase().assertNotEqual(page.url,
+                                       wrong_url)
+    unittest.TestCase().assertEqual(page.url,
+                                    TestPageLocator.URL)
+    unittest.TestCase().assertEqual(page.title,
+                                    TestPageLocator.TITLE)
 
     test_text = "some text"
     input_element = page.get_input_field_1()
     input_element.send_keys(test_text)
-    unittest.TestCase().assertEqual(test_text, input_element.get_property('value'))
+    unittest.TestCase().assertEqual(test_text,
+                                    input_element.get_property('value'))
 
-    price_1 = page.get_price_product_1()
+    price_1 = page.price_product_1
     expected_price_1 = 'Price: $200'
     unittest.TestCase().assertEqual(expected_price_1,
                                     price_1.text,
