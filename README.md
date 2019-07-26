@@ -12,6 +12,7 @@ Master the fundamentals of browser automation using the Python language with Sel
 ### Content:<br/>
 
 1. [Browser Automation Basics](https://github.com/ikostan/ElegantBrowserAutomationWithPythonAndSelenium/tree/master/browser_automation_basics)
+2. [Professional Browser Automation]()
 
 ### Dev Environment:<br/>
 - OS: Win 10 64 bit<br/>
