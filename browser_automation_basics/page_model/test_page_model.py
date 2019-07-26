@@ -28,6 +28,13 @@ class TestPage:
         '''
         return self.driver.find_element(*TestPageLocator.INPUT_FIELD_1)
 
+    def get_button_1(self):
+        '''
+        Returns Button1 object
+        :return:
+        '''
+        return self.driver.find_element(*TestPageLocator.BUTTON_1)
+
     @property
     def price_product_1(self):
         '''
