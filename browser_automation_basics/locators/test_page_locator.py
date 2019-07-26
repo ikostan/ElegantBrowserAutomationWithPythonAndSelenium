@@ -16,8 +16,8 @@ class TestPageLocator:
     BUTTON_4 = (By.ID, 'b4')
 
     # Input Fields
-    INPUT_FIELD_1 = (By.CSS_SELECTOR, 'ipt1')
+    INPUT_FIELD_1 = (By.CSS_SELECTOR, 'input[id=\'ipt1\']')
     INPUT_FIELD_2 = (By.ID, 'ipt2')
 
-    # Dropdown list
-    DROPDOWN = (By.ID, 'sel1')
+    # Drop down list
+    DROP_DOWN = (By.ID, 'sel1')
