@@ -47,7 +47,6 @@ def first_automation():
 
     # Close alert and go back to main window
     alert.accept()
-    page.driver.switch_to_default_content
     time.sleep(2)
 
     # Close web browser
