@@ -15,6 +15,11 @@ def first_automation():
     assert page.url == TestPageLocator.URL
     assert page.title == TestPageLocator.TITLE
 
+    test_text = "some text"
+    input_element = page.get_input_field_1()
+    input_element.send_keys(test_text)
+    assert input_element.get_property("value") == test_text
+
     time.sleep(2)
     page.driver.quit()
 
