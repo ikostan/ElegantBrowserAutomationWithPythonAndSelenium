@@ -1,5 +1,6 @@
 from browser_automation_basics.locators.test_page_locator import TestPageLocator
 
+
 class TestPage:
 
     def __init__(self, driver):
@@ -43,3 +44,10 @@ class TestPage:
         '''
         return self.driver.find_element(*TestPageLocator.PRICE_PRODUCT_1)
 
+    @property
+    def drop_down_menu(self):
+        '''
+        Returns drop down menu object
+        :return:
+        '''
+        return self.driver.find_element(*TestPageLocator.DROP_DOWN)
