@@ -1,21 +1,17 @@
 import time
 import unittest
-from selenium import webdriver
-from browser_automation_basics.page_model.test_page_model import TestPage
-from browser_automation_basics.locators.test_page_locator import TestPageLocator
 from selenium.webdriver.support.select import Select
+from browser_automation_basics.utils.utils import open_web_page, close_web_page
+from browser_automation_basics.locators.test_page_locator import TestPageLocator
 
 
 def first_automation():
 
     # Open web page
-    driver = webdriver.Chrome()
-    wrong_url = 'https://google.com'
-    page = TestPage(driver)
-    page.driver.get(TestPageLocator.URL)
+    page = open_web_page(TestPageLocator.URL)
 
     # using the JavaScriptExecutor to scroll down to bottom of window
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    page.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
     # Working with drop down
     drop_down_menu_selector = Select(page.drop_down_menu)
@@ -42,10 +38,7 @@ def first_automation():
                                     drop_down_menu_selector.all_selected_options[0].get_property('value'))
 
     # Close web browser
-    time.sleep(1)
-    page.driver.close()
-    if page.driver:
-        page.driver.quit()
+    close_web_page(page)
 
 
 if __name__ == '__main__':
