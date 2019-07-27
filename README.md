@@ -29,5 +29,11 @@ Master the fundamentals of browser automation using the Python language with Sel
 - GitHub Desktop v2.1.0<br/>
 - Git v2.22.0.windows.1<br/>
 
+### Test Web Pages:<br/>
+- [The Trial of the Stones](https://techstepacademy.com/trial-of-the-stones)<br/>
+- [Training Ground](https://techstepacademy.com/training-ground)<br/>
+
+[Selenium Documentation](https://seleniumhq.github.io/selenium/docs/api/py/api.html)
+
 ### Source:<br/>
 https://www.udemy.com/elegant-browser-automation-with-python-and-selenium
