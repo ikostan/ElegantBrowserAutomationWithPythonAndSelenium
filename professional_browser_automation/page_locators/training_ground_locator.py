@@ -1,8 +1,7 @@
-from professional_browser_automation.locators.base_page_locator import BasePageLocator
 from selenium.webdriver.common.by import By
 
 
-class TrainingGroundLocator(BasePageLocator):
+class TrainingGroundLocator:
 
 	# Input fields:
 	INPUT_1 = (By.ID, 'ipt1')
