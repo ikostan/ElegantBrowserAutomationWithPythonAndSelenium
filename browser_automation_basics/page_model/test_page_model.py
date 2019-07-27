@@ -1,4 +1,4 @@
-from browser_automation_basics.locators.test_page_locator import TestPageLocator
+from browser_automation_basics.page_locators.test_page_locator import TestPageLocator
 
 
 class TestPage:
