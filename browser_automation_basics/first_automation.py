@@ -55,9 +55,16 @@ def first_automation():
     # Close alert and go back to main window
     alert.accept()
 
+    # using the JavaScriptExecutor to scroll down to bottom of window
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
     # Working with drop down
     from selenium.webdriver.support.select import Select
     drop_down_menu_selector = Select(page.drop_down_menu)
+    unittest.TestCase().assertEqual(3,
+                                    len(drop_down_menu_selector.options))
+    unittest.TestCase().assertListEqual(['Bears', 'Beets', 'Battlestar Galactica'],
+                                        [element.text for element in drop_down_menu_selector.options])
 
     drop_down_menu_selector.select_by_value('third')
     unittest.TestCase().assertEqual(1, len(drop_down_menu_selector.all_selected_options))
@@ -77,7 +84,7 @@ def first_automation():
                                     drop_down_menu_selector.all_selected_options[0].get_property('value'))
 
     # Close web browser
-    time.sleep(2)
+    time.sleep(1)
     page.driver.close()
     if page.driver:
         page.driver.quit()
