@@ -4,6 +4,8 @@ from professional_browser_automation.page_context.training_ground_context import
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import selenium.webdriver
+from professional_browser_automation.elements.base_element import BaseElement
+from professional_browser_automation.elements.alert_element import AlertElement
 
 
 class TrainingGroundModel(BasePageModel):
@@ -35,7 +37,7 @@ class TrainingGroundModel(BasePageModel):
 		Return text from Alert #1
 		:return:
 		'''
-		alert = self.driver.switch_to_alert()
+		alert = AlertElement(self.driver).element
 		return alert.text
 
 	def accept_alert_1(self):
@@ -43,7 +45,7 @@ class TrainingGroundModel(BasePageModel):
 		Accept Alert #1
 		:return:
 		'''
-		alert = self.driver.switch_to_alert()
+		alert = AlertElement(self.driver).element
 		alert.accept()
 		return None
 
@@ -61,7 +63,8 @@ class TrainingGroundModel(BasePageModel):
 		Returns text from input field #1
 		:return:
 		'''
-		return self.driver.find_element(*TrainingGroundLocator.INPUT_1).get_attribute('value')
+		element = BaseElement(self.driver, TrainingGroundLocator.INPUT_1).element
+		return element.get_attribute('value')
 
 	def type_into_input_field_1(self, text):
 		'''
@@ -69,9 +72,9 @@ class TrainingGroundModel(BasePageModel):
 		:param text:
 		:return:
 		'''
-		input_field_1 = self.driver.find_element(*TrainingGroundLocator.INPUT_1)
-		input_field_1.clear()
-		input_field_1.send_keys(text)
+		element = BaseElement(self.driver, TrainingGroundLocator.INPUT_1).element
+		element.clear()
+		element.send_keys(text)
 		return None
 
 	def click_button_1(self):
@@ -79,6 +82,7 @@ class TrainingGroundModel(BasePageModel):
 		Click on Button #1
 		:return:
 		'''
-		self.driver.find_element(*TrainingGroundLocator.Button_1).click()
+		element = BaseElement(self.driver, TrainingGroundLocator.Button_1).element
+		element.click()
 		return None
 
