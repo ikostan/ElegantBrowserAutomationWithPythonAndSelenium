@@ -7,6 +7,7 @@ from browser_automation_basics.locators.test_page_locator import TestPageLocator
 
 def first_automation():
 
+    # Open web page
     driver = webdriver.Chrome()
     wrong_url = 'https://google.com'
     page = TestPage(driver)
@@ -43,6 +44,7 @@ def first_automation():
     button_1 = page.get_button_1()
     button_1.click()
     alert = page.driver.switch_to.alert
+    unittest.TestCase().assertEqual('You clickedButton1.', alert.text)
     time.sleep(2)
 
     # Close alert and go back to main window
