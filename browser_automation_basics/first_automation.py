@@ -1,17 +1,14 @@
 import time
 import unittest
-from selenium import webdriver
-from browser_automation_basics.page_model.test_page_model import TestPage
+from browser_automation_basics.utils.utils import open_web_page, close_web_page
 from browser_automation_basics.locators.test_page_locator import TestPageLocator
 
 
 def first_automation():
 
     # Open web page
-    driver = webdriver.Chrome()
+    page = open_web_page(TestPageLocator.URL)
     wrong_url = 'https://google.com'
-    page = TestPage(driver)
-    page.driver.get(TestPageLocator.URL)
 
     # URL validation
     unittest.TestCase().assertNotEqual(page.url,
@@ -41,10 +38,7 @@ def first_automation():
                                                                                                      price_1.text))
 
     # Close web browser
-    time.sleep(1)
-    page.driver.close()
-    if page.driver:
-        page.driver.quit()
+    close_web_page(page)
 
 
 if __name__ == '__main__':
