@@ -26,7 +26,7 @@ def trial_of_the_stones_automation():
 
 def solve_riddle_of_stone(page):
 
-    # type answer and click on ansswer button
+    # type answer and click on answer button
     page.riddle_of_stone_field.send_keys('rock')
     unittest.TestCase().assertFalse(page.password.is_displayed())
     page.riddle_of_stone_button.click()
