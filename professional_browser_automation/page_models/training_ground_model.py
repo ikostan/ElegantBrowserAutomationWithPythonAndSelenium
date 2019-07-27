@@ -3,11 +3,12 @@ from professional_browser_automation.page_locators.training_ground_locator impor
 from professional_browser_automation.page_context.training_ground_context import TrainingGroundContext
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import selenium.webdriver
 
 
 class TrainingGroundModel(BasePageModel):
 
-	def __init__(self, driver):
+	def __init__(self, driver: selenium.webdriver):
 		super().__init__(driver)
 		self.url = TrainingGroundContext.URL
 
@@ -27,6 +28,24 @@ class TrainingGroundModel(BasePageModel):
 		'''
 		if self.driver:
 			self.driver.quit()
+
+	@property
+	def alert_1_text(self):
+		'''
+		Return text from Alert #1
+		:return:
+		'''
+		alert = self.driver.switch_to_alert()
+		return alert.text
+
+	def accept_alert_1(self):
+		'''
+		Accept Alert #1
+		:return:
+		'''
+		alert = self.driver.switch_to_alert()
+		alert.accept()
+		return None
 
 	@property
 	def title(self):
