@@ -34,6 +34,7 @@ Master the fundamentals of browser automation using the Python language with Sel
 - [Training Ground](https://techstepacademy.com/training-ground)<br/>
 
 ### [Selenium Documentation](https://seleniumhq.github.io/selenium/docs/api/py/api.html)
+### [Page Objects](https://selenium-python.readthedocs.io/page-objects.html)
 
 ### Source:<br/>
 https://www.udemy.com/elegant-browser-automation-with-python-and-selenium
