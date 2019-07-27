@@ -1,7 +1,6 @@
 import time
 import unittest
-from selenium import webdriver
-from browser_automation_basics.page_model.test_page_model import TestPage
+from browser_automation_basics.utils.utils import open_web_page, close_web_page
 from browser_automation_basics.locators.test_page_locator import TestPageLocator
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
@@ -10,10 +9,7 @@ from selenium.webdriver.support import expected_conditions
 def first_automation():
 
     # Open web page
-    driver = webdriver.Chrome()
-    wrong_url = 'https://google.com'
-    page = TestPage(driver)
-    page.driver.get(TestPageLocator.URL)
+    page = open_web_page(TestPageLocator.URL)
 
     # Click on Button1
     button_1 = page.get_button_1()
@@ -28,10 +24,7 @@ def first_automation():
     alert.accept()
 
     # Close web browser
-    time.sleep(1)
-    page.driver.close()
-    if page.driver:
-        page.driver.quit()
+    close_web_page(page)
 
 
 if __name__ == '__main__':
