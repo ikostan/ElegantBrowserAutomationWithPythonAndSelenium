@@ -13,6 +13,7 @@ def first_automation():
     opts.add_argument('--disable-gpu')
     driver = webdriver.Chrome(options=opts)
 
+    # open multiple tabs
     driver.get(TestPageLocator.URL)
     WebDriverWait(driver, 10).until(EC.title_is(TestPageLocator.TITLE))
     driver.execute_script('window.open(\'https://techstepacademy.com/workshops\', \'_blank\');')
@@ -20,11 +21,13 @@ def first_automation():
     driver.execute_script('window.open(\'https://techstepacademy.com/about\', \'_blank\');')
     driver.execute_script('window.open(\'https://techstepacademy.com/news\', \'_blank\');')
 
+    # switch between tabs
     unittest.TestCase().assertEqual(5, len(driver.window_handles))
     for i in range(len(driver.window_handles)):
         driver.switch_to.window(driver.window_handles[i])
         time.sleep(2)
 
+    # close browser
     time.sleep(1)
     driver.close()
 
