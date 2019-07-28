@@ -17,3 +17,20 @@ class BaseElement:
 		:return:
 		'''
 		return WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(self.locator))
+
+	def click(self):
+		'''
+		Wait until element becomes to be clickable and then click on it
+		:return:
+		'''
+		WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.locator))
+		self.element.click()
+		return None
+
+	@property
+	def text(self):
+		'''
+		Return text from web element
+		:return:
+		'''
+		return self.element.text
