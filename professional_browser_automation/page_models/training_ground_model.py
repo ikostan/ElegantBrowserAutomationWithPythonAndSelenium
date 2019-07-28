@@ -1,11 +1,11 @@
+import selenium.webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from professional_browser_automation.elements.base_element import BaseElement
+from professional_browser_automation.elements.alert_element import AlertElement
 from professional_browser_automation.page_models.base_page_model import BasePageModel
 from professional_browser_automation.page_locators.training_ground_locator import TrainingGroundLocator
 from professional_browser_automation.page_context.training_ground_context import TrainingGroundContext
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import selenium.webdriver
-from professional_browser_automation.elements.base_element import BaseElement
-from professional_browser_automation.elements.alert_element import AlertElement
 
 
 class TrainingGroundModel(BasePageModel):
@@ -30,6 +30,14 @@ class TrainingGroundModel(BasePageModel):
 		'''
 		if self.driver:
 			self.driver.quit()
+
+	@property
+	def button_1(self):
+		'''
+		Returns Button #1 object
+		:return:
+		'''
+		return BaseElement(self.driver, TrainingGroundLocator.Button_1)
 
 	@property
 	def alert_1_text(self):
@@ -75,14 +83,5 @@ class TrainingGroundModel(BasePageModel):
 		element = BaseElement(self.driver, TrainingGroundLocator.INPUT_1).element
 		element.clear()
 		element.send_keys(text)
-		return None
-
-	def click_button_1(self):
-		'''
-		Click on Button #1
-		:return:
-		'''
-		element = BaseElement(self.driver, TrainingGroundLocator.Button_1).element
-		element.click()
 		return None
 
