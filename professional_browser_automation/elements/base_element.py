@@ -34,3 +34,11 @@ class BaseElement:
 		:return:
 		'''
 		return self.element.text
+
+	@property
+	def is_visible(self):
+		'''
+		Returns 'is element visible' property value
+		:return:
+		'''
+		self.element.is_displayed()
