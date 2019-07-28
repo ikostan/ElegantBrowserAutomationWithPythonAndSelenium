@@ -10,26 +10,11 @@ from professional_browser_automation.page_context.training_ground_context import
 
 class TrainingGroundModel(BasePageModel):
 
+	url = TrainingGroundContext.URL
+	expected_title = TrainingGroundContext.TITLE
+
 	def __init__(self, driver: selenium.webdriver):
 		super().__init__(driver)
-		self.url = TrainingGroundContext.URL
-
-	def go(self):
-		'''
-		Open test web page
-		:return:
-		'''
-		self.driver.get(self.url)
-		WebDriverWait(self.driver, 10).until(EC.title_contains(TrainingGroundContext.TITLE))
-		return None
-
-	def quit(self):
-		'''
-		Close webdriver
-		:return:
-		'''
-		if self.driver:
-			self.driver.quit()
 
 	@property
 	def button_1(self):
@@ -56,14 +41,6 @@ class TrainingGroundModel(BasePageModel):
 		alert = AlertElement(self.driver).element
 		alert.accept()
 		return None
-
-	@property
-	def title(self):
-		'''
-		Return web page title
-		:return:
-		'''
-		return self.driver.title
 
 	@property
 	def get_input_field_1_text(self):
