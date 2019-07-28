@@ -1,7 +1,7 @@
 import unittest
-from professional_browser_automation.page_context.training_ground_context import TrainingGroundContext
-from professional_browser_automation.page_models.training_ground_model import TrainingGroundModel
 import selenium
+from professional_browser_automation.page_models.training_ground_model import TrainingGroundModel
+from professional_browser_automation.page_context.training_ground_context import TrainingGroundContext
 
 
 class TrainingGroundTestCase(unittest.TestCase):
@@ -22,10 +22,12 @@ class TrainingGroundTestCase(unittest.TestCase):
 		self.page.type_into_input_field_1(expected_text)
 		self.assertEqual(expected_text, self.page.get_input_field_1_text)
 
+	def test_button_1(self):
+		self.assertEqual(TrainingGroundContext.BUTTON_1, self.page.button_1.text)
+
 	def test_alert_1(self):
-		expected_alert_text = 'You clickedButton1.'
-		self.page.click_button_1()
-		self.assertEqual(expected_alert_text, self.page.alert_1_text)
+		self.page.button_1.click()
+		self.assertEqual(TrainingGroundContext.ALERT_1, self.page.alert_1_text)
 		self.page.accept_alert_1()
 
 	@classmethod
