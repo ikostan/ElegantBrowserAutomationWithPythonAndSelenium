@@ -1,3 +1,4 @@
+import selenium
 from selenium.webdriver.support.wait import WebDriverWait
 from professional_browser_automation.page_context.base_page_context import BasePageContext
 from selenium.webdriver.support import expected_conditions as EC
@@ -8,7 +9,7 @@ class BasePageModel:
 	url = BasePageContext.URL
 	expected_title = BasePageContext.TITLE
 
-	def __init__(self, driver):
+	def __init__(self, driver: selenium.webdriver):
 		self.driver = driver
 
 	@property
