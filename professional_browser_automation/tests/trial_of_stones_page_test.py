@@ -17,7 +17,7 @@ class TrainingGroundTestCase(unittest.TestCase):
 	def test_title(self):
 		self.assertEqual(TrialStonesContext.TITLE, self.page.title)
 
-	def test_riddle_stone(self):
+	def test_riddle_of_stone(self):
 		# 1
 		self.assertFalse(self.page.is_password_visible)
 		self.page.type_into_riddle_stone_field(TrialStonesContext.ANOTHER_WORD_FOR_STONE)
@@ -28,6 +28,35 @@ class TrainingGroundTestCase(unittest.TestCase):
 		# 3
 		self.assertTrue(self.page.is_password_visible)
 		self.assertEqual(TrialStonesContext.PASSWORD, self.page.password)
+
+	def test_riddle_of_secret(self):
+		# 1
+		self.assertFalse(self.page.riddle_secrets_success)
+		self.page.type_into_riddle_secrets_field(TrialStonesContext.PASSWORD)
+		self.assertEqual(TrialStonesContext.PASSWORD, self.page.get_riddle_secrets_field_text)
+		self.assertFalse(self.page.riddle_secrets_success)
+		# 2
+		self.page.riddle_secrets_button.click()
+		# 3
+		self.assertTrue(self.page.riddle_secrets_success)
+
+	def test_riddle_of_merchants(self):
+		# 1
+		self.assertFalse(self.page.riddle_merchants_success)
+		self.assertEqual(TrialStonesContext.JESSICA_TOTAL_WEALTH, self.page.jessica_wealth)
+		self.assertEqual(TrialStonesContext.BERNARD_TOTAL_WEALTH, self.page.bernard_wealth)
+
+		merchant = self.page.jessica \
+			if self.page.jessica_wealth > self.page.bernard_wealth \
+			else self.page.bernard
+
+		self.page.type_into_riddle_merchants_field(merchant)
+		self.assertEqual(TrialStonesContext.JESSICA, self.page.get_riddle_merchants_field_text)
+		self.assertFalse(self.page.riddle_merchants_success)
+		# 2
+		self.page.riddle_merchants_button.click()
+		# 3
+		self.assertTrue(self.page.riddle_merchants_success)
 
 	def test_buttons_label(self):
 		self.assertEqual(TrialStonesContext.BUTTON, self.page.riddle_stone_button.text)
