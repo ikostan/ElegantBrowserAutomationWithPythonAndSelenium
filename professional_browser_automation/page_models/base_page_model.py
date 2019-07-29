@@ -10,7 +10,15 @@ class BasePageModel:
 	expected_title = BasePageContext.TITLE
 
 	def __init__(self, driver: selenium.webdriver):
-		self.driver = driver
+		self._driver = driver
+
+	@property
+	def driver(self):
+		'''
+		Returns web driver
+		:return:
+		'''
+		return self._driver
 
 	@property
 	def page_url(self):
@@ -18,7 +26,7 @@ class BasePageModel:
 		Returns page current url
 		:return:
 		'''
-		return self.driver.current_url
+		return self._driver.current_url
 
 	@property
 	def title(self):
@@ -26,15 +34,15 @@ class BasePageModel:
 		Return web page title
 		:return:
 		'''
-		return self.driver.title
+		return self._driver.title
 
 	def go(self):
 		'''
 		Open test web page
 		:return:
 		'''
-		self.driver.get(self._url)
-		WebDriverWait(self.driver, 10).until(EC.title_contains(self.expected_title))
+		self._driver.get(self._url)
+		WebDriverWait(self._driver, 10).until(EC.title_contains(self.expected_title))
 		return None
 
 	def quit(self):
@@ -42,6 +50,6 @@ class BasePageModel:
 		Close webdriver
 		:return:
 		'''
-		if self.driver:
-			self.driver.quit()
+		if self._driver:
+			self._driver.quit()
 		return None
