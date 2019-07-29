@@ -47,7 +47,7 @@ class TrialStonesModel(BasePageModel):
 		Returns is password value visible
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.RIDDLE_INPUT_FIELD).is_visible
+		return BaseElement(self.driver, TrialStonesPageLocator.PASSWORD).is_visible
 
 	@property
 	def password(self):
