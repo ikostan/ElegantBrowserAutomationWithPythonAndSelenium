@@ -8,10 +8,10 @@ class TrainingGroundLocator:
 	INPUT_2 = (By.ID, 'ipt2')
 
 	# Buttons:
-	Button_1 = (By.ID, 'b1')
-	Button_2 = (By.ID, 'b2')
-	Button_3 = (By.ID, 'b3')
-	Button_4 = (By.ID, 'b4')
+	BUTTON_1 = (By.ID, 'b1')
+	BUTTON_2 = (By.ID, 'b2')
+	BUTTON_3 = (By.ID, 'b3')
+	BUTTON_4 = (By.ID, 'b4')
 
 	# Drop down:
 	DROP_DOWN = (By.ID, 'sel1')
