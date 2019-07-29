@@ -6,11 +6,19 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class BasePageModel:
 
-	url = BasePageContext.URL
+	_url = BasePageContext.URL
 	expected_title = BasePageContext.TITLE
 
 	def __init__(self, driver: selenium.webdriver):
 		self.driver = driver
+
+	@property
+	def page_url(self):
+		'''
+		Returns page current url
+		:return:
+		'''
+		return self.driver.current_url()
 
 	@property
 	def title(self):
@@ -25,7 +33,7 @@ class BasePageModel:
 		Open test web page
 		:return:
 		'''
-		self.driver.get(self.url)
+		self.driver.get(self._url)
 		WebDriverWait(self.driver, 10).until(EC.title_contains(self.expected_title))
 		return None
 
