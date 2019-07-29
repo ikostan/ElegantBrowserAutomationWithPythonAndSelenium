@@ -5,3 +5,4 @@ class IFrameTrainingContext(BasePageContext):
 
 	URL = BasePageContext.URL + '/iframe-training'
 	TITLE = 'IFrameTraining — ' + BasePageContext.TITLE
+	PARAGRAPH = ' Training Ground for IFrames and traditional frames'
