@@ -7,7 +7,7 @@ from professional_browser_automation.page_context.training_ground_context import
 
 class TrainingGroundModel(BasePageModel):
 
-	url = TrainingGroundContext.URL
+	_url = TrainingGroundContext.URL
 	expected_title = TrainingGroundContext.TITLE
 
 	@property
