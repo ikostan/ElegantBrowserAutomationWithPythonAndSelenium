@@ -5,4 +5,4 @@ class FrameElement(BaseElement):
 
 	@property
 	def iframe(self):
-		return
+		return super().element
