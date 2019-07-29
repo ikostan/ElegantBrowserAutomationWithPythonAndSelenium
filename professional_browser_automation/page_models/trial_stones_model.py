@@ -7,7 +7,7 @@ from professional_browser_automation.page_locators.trial_stones_page_locator imp
 
 class TrialStonesModel(BasePageModel):
 
-	url = TrialStonesPageLocator.URL
+	url = TrialStonesContext.URL
 	expected_title = TrialStonesContext.TITLE
 
 	def __init__(self, driver: selenium.webdriver):
