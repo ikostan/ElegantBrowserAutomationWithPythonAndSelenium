@@ -16,7 +16,7 @@ class TrainingGroundModel(BasePageModel):
 		Returns Button #1 object
 		:return:
 		'''
-		return BaseElement(self.driver, TrainingGroundLocator.Button_1)
+		return BaseElement(super().driver, TrainingGroundLocator.Button_1)
 
 	@property
 	def alert_1_text(self):
@@ -24,16 +24,14 @@ class TrainingGroundModel(BasePageModel):
 		Return text from Alert #1
 		:return:
 		'''
-		alert = AlertElement(self.driver).element
-		return alert.text
+		return AlertElement(super().driver).text
 
 	def accept_alert_1(self):
 		'''
 		Accept Alert #1
 		:return:
 		'''
-		alert = AlertElement(self.driver).element
-		alert.accept()
+		AlertElement(super().driver).accept()
 		return None
 
 	@property
@@ -42,7 +40,7 @@ class TrainingGroundModel(BasePageModel):
 		Returns text from input field #1
 		:return:
 		'''
-		return BaseElement(self.driver, TrainingGroundLocator.INPUT_1).value
+		return BaseElement(super().driver, TrainingGroundLocator.INPUT_1).value
 
 	def type_into_input_field_1(self, text):
 		'''
@@ -50,7 +48,7 @@ class TrainingGroundModel(BasePageModel):
 		:param text:
 		:return:
 		'''
-		element = BaseElement(self.driver, TrainingGroundLocator.INPUT_1).element
+		element = BaseElement(super().driver, TrainingGroundLocator.INPUT_1).element
 		element.clear()
 		element.send_keys(text)
 		return None
