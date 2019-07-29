@@ -12,7 +12,7 @@ class TrialOfStonesTestCase(unittest.TestCase):
 		cls.page.go()
 
 	def test_url(self):
-		self.assertEqual(TrialStonesContext.URL, self.page.url)
+		self.assertEqual(TrialStonesContext.URL, self.page.page_url)
 
 	def test_title(self):
 		self.assertEqual(TrialStonesContext.TITLE, self.page.title)
