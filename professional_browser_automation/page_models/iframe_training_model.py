@@ -4,9 +4,9 @@ from professional_browser_automation.page_locators.iframe_training_page_locator 
 from professional_browser_automation.page_context.iframe_training_context import IFrameTrainingContext
 
 
-class TrainingGroundModel(BasePageModel):
+class IFrameTrainingModel(BasePageModel):
 
-	url = IFrameTrainingContext.URL
+	_url = IFrameTrainingContext.URL
 	expected_title = IFrameTrainingContext.TITLE
 
 	def switch_to_iframe(self):
