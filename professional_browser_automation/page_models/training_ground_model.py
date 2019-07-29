@@ -42,8 +42,7 @@ class TrainingGroundModel(BasePageModel):
 		Returns text from input field #1
 		:return:
 		'''
-		element = BaseElement(self.driver, TrainingGroundLocator.INPUT_1).element
-		return element.get_attribute('value')
+		return BaseElement(self.driver, TrainingGroundLocator.INPUT_1).value
 
 	def type_into_input_field_1(self, text):
 		'''
