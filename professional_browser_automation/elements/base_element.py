@@ -36,6 +36,14 @@ class BaseElement:
 		return self.element.text
 
 	@property
+	def value(self):
+		'''
+		Return text from web element
+		:return:
+		'''
+		return self.element.get_attribute('value')
+
+	@property
 	def is_visible(self):
 		'''
 		Returns 'is element visible' property value
