@@ -16,7 +16,7 @@ class TrainingGroundModel(BasePageModel):
 		Returns Button #1 object
 		:return:
 		'''
-		return BaseElement(super().driver, TrainingGroundLocator.Button_1)
+		return BaseElement(super().driver, TrainingGroundLocator.BUTTON_1)
 
 	@property
 	def alert_1_text(self):
