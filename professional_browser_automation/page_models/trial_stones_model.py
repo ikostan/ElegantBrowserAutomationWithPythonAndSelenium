@@ -6,7 +6,7 @@ from professional_browser_automation.page_locators.trial_stones_page_locator imp
 
 class TrialStonesModel(BasePageModel):
 
-	url = TrialStonesContext.URL
+	_url = TrialStonesContext.URL
 	expected_title = TrialStonesContext.TITLE
 
 	@property
