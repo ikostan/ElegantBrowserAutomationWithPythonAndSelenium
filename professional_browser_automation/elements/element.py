@@ -18,3 +18,6 @@ class Element:
 		'''
 		return WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(self.locator))
 
+	@property
+	def element(self):
+		return self.element
