@@ -4,7 +4,7 @@ from professional_browser_automation.page_models.trial_stones_model import Trial
 from professional_browser_automation.page_context.trial_stones_context import TrialStonesContext
 
 
-class TrainingGroundTestCase(unittest.TestCase):
+class TrialOfStonesTestCase(unittest.TestCase):
 
 	@classmethod
 	def setUpClass(cls):
