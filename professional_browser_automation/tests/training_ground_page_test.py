@@ -12,7 +12,7 @@ class TrainingGroundTestCase(unittest.TestCase):
 		cls.page.go()
 
 	def test_url(self):
-		self.assertEqual(TrainingGroundContext.URL, self.page.url)
+		self.assertEqual(TrainingGroundContext.URL, self.page.page_url)
 
 	def test_title(self):
 		self.assertEqual(TrainingGroundContext.TITLE, self.page.title)
