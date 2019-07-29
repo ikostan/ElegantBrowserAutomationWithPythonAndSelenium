@@ -55,7 +55,7 @@ class TrialStonesModel(BasePageModel):
 		Returns password value
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.RIDDLE_INPUT_FIELD).element.text
+		return BaseElement(self.driver, TrialStonesPageLocator.PASSWORD).element.text
 
 	@property
 	def riddle_secrets_button(self):
