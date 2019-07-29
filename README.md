@@ -32,6 +32,7 @@ Master the fundamentals of browser automation using the Python language with Sel
 ### Test Web Pages:<br/>
 - [The Trial of the Stones](https://techstepacademy.com/trial-of-the-stones)<br/>
 - [Training Ground](https://techstepacademy.com/training-ground)<br/>
+- [Training Ground for IFrames](https://techstepacademy.com/iframe-training)
 
 ### Documentation:<br/>
 - [Selenium Documentation](https://seleniumhq.github.io/selenium/docs/api/py/api.html)
