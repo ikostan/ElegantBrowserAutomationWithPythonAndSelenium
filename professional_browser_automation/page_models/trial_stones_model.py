@@ -67,8 +67,7 @@ class TrialStonesModel(BasePageModel):
 		Returns text from input field #2: Riddle of Secrets
 		:return:
 		'''
-		element = BaseElement(self.driver, TrialStonesPageLocator.PASSWORD_INPUT_FIELD).element
-		return element.get_attribute('value')
+		return BaseElement(self.driver, TrialStonesPageLocator.PASSWORD_INPUT_FIELD).value
 
 	def type_into_riddle_secrets_field(self, text):
 		'''
@@ -99,8 +98,7 @@ class TrialStonesModel(BasePageModel):
 		Returns text from input field #3: The name of the richest merchant
 		:return:
 		'''
-		element = BaseElement(self.driver, TrialStonesPageLocator.RICHEST_MERCHANT_FIELD).element
-		return element.get_attribute('value')
+		return BaseElement(self.driver, TrialStonesPageLocator.RICHEST_MERCHANT_FIELD).value
 
 	def type_into_riddle_merchants_field(self, text):
 		'''
