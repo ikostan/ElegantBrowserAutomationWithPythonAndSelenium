@@ -15,7 +15,7 @@ class TrialStonesModel(BasePageModel):
 		Returns Button #1 object: Riddle of Stone
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.RIDDLE_ANSWER_BUTTON)
+		return BaseElement(super().driver, TrialStonesPageLocator.RIDDLE_ANSWER_BUTTON)
 
 	@property
 	def get_riddle_stone_field_text(self):
@@ -23,7 +23,7 @@ class TrialStonesModel(BasePageModel):
 		Returns text from input field #1: Riddle of Stone
 		:return:
 		'''
-		element = BaseElement(self.driver, TrialStonesPageLocator.RIDDLE_INPUT_FIELD).element
+		element = BaseElement(super().driver, TrialStonesPageLocator.RIDDLE_INPUT_FIELD).element
 		return element.get_attribute('value')
 
 	def type_into_riddle_stone_field(self, text):
@@ -32,7 +32,7 @@ class TrialStonesModel(BasePageModel):
 		:param text:
 		:return:
 		'''
-		element = BaseElement(self.driver, TrialStonesPageLocator.RIDDLE_INPUT_FIELD).element
+		element = BaseElement(super().driver, TrialStonesPageLocator.RIDDLE_INPUT_FIELD).element
 		element.clear()
 		element.send_keys(text)
 		return None
@@ -43,7 +43,7 @@ class TrialStonesModel(BasePageModel):
 		Returns is password value visible
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.PASSWORD).is_visible
+		return BaseElement(super().driver, TrialStonesPageLocator.PASSWORD).is_visible
 
 	@property
 	def password(self):
@@ -51,7 +51,7 @@ class TrialStonesModel(BasePageModel):
 		Returns password value
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.PASSWORD).element.text
+		return BaseElement(super().driver, TrialStonesPageLocator.PASSWORD).element.text
 
 	@property
 	def riddle_secrets_button(self):
@@ -59,7 +59,7 @@ class TrialStonesModel(BasePageModel):
 		Returns Button #2 object: Riddle of Secrets
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.PASSWORD_ANSWER_BUTTON)
+		return BaseElement(super().driver, TrialStonesPageLocator.PASSWORD_ANSWER_BUTTON)
 
 	@property
 	def get_riddle_secrets_field_text(self):
@@ -67,7 +67,7 @@ class TrialStonesModel(BasePageModel):
 		Returns text from input field #2: Riddle of Secrets
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.PASSWORD_INPUT_FIELD).value
+		return BaseElement(super().driver, TrialStonesPageLocator.PASSWORD_INPUT_FIELD).value
 
 	def type_into_riddle_secrets_field(self, text):
 		'''
@@ -75,14 +75,14 @@ class TrialStonesModel(BasePageModel):
 		:param text:
 		:return:
 		'''
-		element = BaseElement(self.driver, TrialStonesPageLocator.PASSWORD_INPUT_FIELD).element
+		element = BaseElement(super().driver, TrialStonesPageLocator.PASSWORD_INPUT_FIELD).element
 		element.clear()
 		element.send_keys(text)
 		return None
 
 	@property
 	def riddle_secrets_success(self):
-		return BaseElement(self.driver, TrialStonesPageLocator.PASSWORD_SUCCESS).is_visible
+		return BaseElement(super().driver, TrialStonesPageLocator.PASSWORD_SUCCESS).is_visible
 
 	@property
 	def riddle_merchants_button(self):
@@ -90,7 +90,7 @@ class TrialStonesModel(BasePageModel):
 		Returns Button #3 object: The Two Merchants
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.RICHEST_MERCHANT_BUTTON)
+		return BaseElement(super().driver, TrialStonesPageLocator.RICHEST_MERCHANT_BUTTON)
 
 	@property
 	def get_riddle_merchants_field_text(self):
@@ -98,7 +98,7 @@ class TrialStonesModel(BasePageModel):
 		Returns text from input field #3: The name of the richest merchant
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.RICHEST_MERCHANT_FIELD).value
+		return BaseElement(super().driver, TrialStonesPageLocator.RICHEST_MERCHANT_FIELD).value
 
 	def type_into_riddle_merchants_field(self, text):
 		'''
@@ -106,7 +106,7 @@ class TrialStonesModel(BasePageModel):
 		:param text:
 		:return:
 		'''
-		element = BaseElement(self.driver, TrialStonesPageLocator.RICHEST_MERCHANT_FIELD).element
+		element = BaseElement(super().driver, TrialStonesPageLocator.RICHEST_MERCHANT_FIELD).element
 		element.clear()
 		element.send_keys(text)
 		return None
@@ -117,7 +117,7 @@ class TrialStonesModel(BasePageModel):
 		Returns Jessica's total wealth
 		:return:
 		'''
-		return int(BaseElement(self.driver, TrialStonesPageLocator.JESSICA_TOTAL_WEALTH).element.text)
+		return int(BaseElement(super().driver, TrialStonesPageLocator.JESSICA_TOTAL_WEALTH).element.text)
 
 	@property
 	def bernard_wealth(self):
@@ -125,7 +125,7 @@ class TrialStonesModel(BasePageModel):
 		Returns Bernard's total wealth
 		:return:
 		'''
-		return int(BaseElement(self.driver, TrialStonesPageLocator.BERNARD_TOTAL_WEALTH).element.text)
+		return int(BaseElement(super().driver, TrialStonesPageLocator.BERNARD_TOTAL_WEALTH).element.text)
 
 	@property
 	def jessica(self):
@@ -133,7 +133,7 @@ class TrialStonesModel(BasePageModel):
 		Returns Jessica's name
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.JESSICA).element.text
+		return BaseElement(super().driver, TrialStonesPageLocator.JESSICA).element.text
 
 	@property
 	def bernard(self):
@@ -141,12 +141,12 @@ class TrialStonesModel(BasePageModel):
 		Returns Bernard'sname
 		:return:
 		'''
-		return BaseElement(self.driver, TrialStonesPageLocator.BERNARD).element.text
+		return BaseElement(super().driver, TrialStonesPageLocator.BERNARD).element.text
 
 	@property
 	def riddle_merchants_success(self):
-		return BaseElement(self.driver, TrialStonesPageLocator.RICHEST_MERCHANT_SUCCESS).is_visible
+		return BaseElement(super().driver, TrialStonesPageLocator.RICHEST_MERCHANT_SUCCESS).is_visible
 
 	@property
 	def is_trial_complete(self):
-		return BaseElement(self.driver, TrialStonesPageLocator.TRIAL_COMPLETE).is_visible
+		return BaseElement(super().driver, TrialStonesPageLocator.TRIAL_COMPLETE).is_visible
