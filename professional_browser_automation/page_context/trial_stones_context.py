@@ -11,5 +11,7 @@ class TrialStonesContext(BasePageContext):
 	SUCCESS = 'Success!'
 	JESSICA_TOTAL_WEALTH = 3000
 	BERNARD_TOTAL_WEALTH = 2000
+	JESSICA = 'Jessica'
+	BERNARD = 'Bernard'
 	CHECK_ANSWERS = 'Trial Complete'
 
