@@ -13,9 +13,6 @@ class TrainingGroundModel(BasePageModel):
 	url = TrainingGroundContext.URL
 	expected_title = TrainingGroundContext.TITLE
 
-	def __init__(self, driver: selenium.webdriver):
-		super().__init__(driver)
-
 	@property
 	def button_1(self):
 		'''
