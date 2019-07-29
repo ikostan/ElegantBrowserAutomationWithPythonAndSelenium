@@ -7,17 +7,25 @@ class Element:
 
 	def __init__(self, driver: selenium.webdriver, locator: tuple):
 
-		self.driver = driver
-		self.locator = locator
-		self.element = self._find()
+		self._driver = driver
+		self._locator = locator
+		self._element = self._find()
 
 	def _find(self):
 		'''
 		Returns element if located else raises TimeOut exception
 		:return:
 		'''
-		return WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(self.locator))
+		return WebDriverWait(self._driver, 10).until(EC.presence_of_element_located(self._locator))
 
 	@property
 	def element(self):
-		return self.element
+		return self._element
+
+	@property
+	def driver(self):
+		return self._driver
+
+	@property
+	def locator(self):
+		return self._locator
