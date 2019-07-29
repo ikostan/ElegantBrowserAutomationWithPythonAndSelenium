@@ -128,10 +128,26 @@ class TrialStonesModel(BasePageModel):
 	@property
 	def bernard_wealth(self):
 		'''
-		Returns Jessica's total wealth
+		Returns Bernard's total wealth
 		:return:
 		'''
 		return int(BaseElement(self.driver, TrialStonesPageLocator.BERNARD_TOTAL_WEALTH).element.text)
+
+	@property
+	def jessica(self):
+		'''
+		Returns Jessica's name
+		:return:
+		'''
+		return BaseElement(self.driver, TrialStonesPageLocator.JESSICA).element.text
+
+	@property
+	def bernard(self):
+		'''
+		Returns Bernard'sname
+		:return:
+		'''
+		return BaseElement(self.driver, TrialStonesPageLocator.BERNARD).element.text
 
 	@property
 	def riddle_merchants_success(self):
