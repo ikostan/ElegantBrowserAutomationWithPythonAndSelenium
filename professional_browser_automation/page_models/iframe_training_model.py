@@ -10,11 +10,11 @@ class IFrameTrainingModel(BasePageModel):
 	expected_title = IFrameTrainingContext.TITLE
 
 	def switch_to_iframe(self):
-		self.driver.switch_to.frame(FrameElement(self.driver, IFrameTrainingPageLocator.IFRAME).iframe)
+		super().driver.switch_to.frame(FrameElement(self.driver, IFrameTrainingPageLocator.IFRAME).iframe)
 		return None
 
 	def switch_to_main_frame(self):
-		self.driver.switch_to.default_content()
+		super().driver.switch_to.default_content()
 		return None
 
 
