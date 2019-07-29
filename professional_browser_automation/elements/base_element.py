@@ -41,4 +41,4 @@ class BaseElement:
 		Returns 'is element visible' property value
 		:return:
 		'''
-		self.element.is_displayed()
+		return self.element.is_displayed()
