@@ -10,9 +10,6 @@ class TrialStonesModel(BasePageModel):
 	url = TrialStonesContext.URL
 	expected_title = TrialStonesContext.TITLE
 
-	def __init__(self, driver: selenium.webdriver):
-		super().__init__(driver)
-
 	@property
 	def riddle_stone_button(self):
 		'''
