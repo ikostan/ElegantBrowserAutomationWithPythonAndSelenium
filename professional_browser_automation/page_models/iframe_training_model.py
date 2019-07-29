@@ -9,7 +9,13 @@ class TrainingGroundModel(BasePageModel):
 	url = IFrameTrainingContext.URL
 	expected_title = IFrameTrainingContext.TITLE
 
-	@property
 	def switch_to_iframe(self):
-		self.driver.switch_to(FrameElement(self.driver, IFrameTrainingPageLocator.IFRAME).element)
+		self.driver.switch_to.frame(FrameElement(self.driver, IFrameTrainingPageLocator.IFRAME).iframe)
+		return None
+
+	def switch_to_main_frame(self):
+		self.driver.switch_to.default_content()
+		return None
+
+
 
