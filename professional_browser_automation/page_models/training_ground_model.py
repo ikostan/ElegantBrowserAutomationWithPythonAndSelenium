@@ -1,6 +1,3 @@
-import selenium.webdriver
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from professional_browser_automation.elements.base_element import BaseElement
 from professional_browser_automation.elements.alert_element import AlertElement
 from professional_browser_automation.page_models.base_page_model import BasePageModel
