@@ -1,4 +1,3 @@
-import selenium.webdriver
 from professional_browser_automation.elements.base_element import BaseElement
 from professional_browser_automation.page_models.base_page_model import BasePageModel
 from professional_browser_automation.page_context.trial_stones_context import TrialStonesContext
