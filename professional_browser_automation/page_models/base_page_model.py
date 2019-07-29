@@ -18,7 +18,7 @@ class BasePageModel:
 		Returns page current url
 		:return:
 		'''
-		return self.driver.current_url()
+		return self.driver.current_url
 
 	@property
 	def title(self):
